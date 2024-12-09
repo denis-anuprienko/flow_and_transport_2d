@@ -1,0 +1,23 @@
+mesh ..\..\INMOST_Projects\meshes\exp.vtk
+dt 1e-2
+T  1e0 
+save_intensity 1
+
+fv_type TPFA
+
+solver_type_flow inner_mptiluc
+solver_type_tran inner_ilu2
+lin_atol_flow 1e-12
+lin_rtol_flow 1e-9
+lin_atol_tran 1e-9
+lin_rtol_tran 1e-9
+droptol_tran 1e-1
+droptol_flow 1e-2
+
+newton_flow_atol 1e-3
+newton_flow_rtol 1e-3
+
+schwartz_overlap 1
+
+# Other
+save_sol 1
