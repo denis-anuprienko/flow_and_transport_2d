@@ -139,7 +139,7 @@ void Process_Flow2D::computeFlux()
 		unsigned m = static_cast<unsigned>(faces.size());
         double cflux[2] = {0., 0.};
 		for(unsigned k = 0; k < m; k++){
-			double flux = (-1 * fv->getDgrad(faces[k],varH)).GetValue();
+			double flux = (-1 * fv->getDgrad(faces[k],varH)).GetValue() / faces[k].Area();
             faces[k].Real(tagFluxF) = flux;
             double nor[2];
 			faces[k].UnitNormal(nor);
